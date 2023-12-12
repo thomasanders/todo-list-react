@@ -2,11 +2,15 @@ html {
   box-sizing: border-box;
 }
 
-*, ::after, ::before {
+*, ::before, ::after {
   box-sizing: inherit;
 }
 
 .body {
-  background-color: rgb(233 233 233);
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #eee;
+  word-break: break-word;
 }

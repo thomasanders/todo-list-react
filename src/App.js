@@ -6,6 +6,12 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 
+// const tasks = [
+//   {id:1, content:"Download -To do App-", done: true},
+//   {id:2, content:"Learn React", done: false},
+// ];
+// const hideDoneTasks = false;
+
 function App() {
   const [hideDone, setHideDone] = useState(false);
 

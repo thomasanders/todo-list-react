@@ -1,29 +1,35 @@
 import React from "react";
+import Form from "./Form";
+import Tasks from "./Tasks";
+
+const tasks = [
+  { id: 1, content: "Download ToDo Task List", done: true },
+  { id: 2, content: "Eat Pierogi", done: false },
+];
+
+const hideDoneTasks = false
 
 function App() {
-  return ( 
-  <main className="main">
-  <h1 className="main__title">Tasks list</h1>
-  <div className="section">
-      <h2 className="section__header">Add new task</h2>
-      <div className="section__main">
-          <form className="js-form form">
-              <input className="js-newTask form__newTask" placeholder="add new task" name="To do" type="text"
-                  autocomplete="off"/>
-              <button className="form__button">Add new task</button>
-          </form>
+  return (
+    <main className="main">
+      <h1 className="main__title">Tasks list</h1>
+      <div className="section">
+        <h2 className="section__header">Add new task</h2>
+        <div className="section__main">
+          <Form/>
+        </div>
       </div>
-  </div>
-  <div className="section">
-      <div className="section__header section__headerSecondary">
+      <div className="section">
+        <div className="section__header section__headerSecondary">
           <h2>Tasks List </h2>
-          <div className="task__newButtons js-newButtons"></div>
+          <div className="task__newButtons"></div>
+        </div>
+        <div className="section__main">
+          <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>
+        </div>
       </div>
-      <div className="section__main">
-          <ul className="js-tasks task__list"></ul>
-      </div>
-  </div>
-</main>);
+    </main>
+  );
 }
 
 export default App;

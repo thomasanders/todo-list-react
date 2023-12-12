@@ -4,7 +4,7 @@ Application for adding tasks to list.
 
 ![Screen](https://github.com/thomasanders/todo-list-react/blob/master/images/Animation.gif)
 ## Technologies used in project:
--React
+- React
 - HTML
 - CSS
 - Javascript

@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
+import Buttons from "./Buttons";
 
 const tasks = [
   { id: 1, content: "Download ToDo Task List", done: true },
@@ -22,7 +23,7 @@ function App() {
       <div className="section">
         <div className="section__header section__headerSecondary">
           <h2>Tasks List </h2>
-          <div className="task__newButtons"></div>
+          <Buttons tasks={tasks}/>
         </div>
         <div className="section__main">
           <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>

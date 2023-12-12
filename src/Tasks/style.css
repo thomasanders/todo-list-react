@@ -1,106 +1,54 @@
-.task__list {
-    list-style: none;
-  }
-  
-  .task__ToDoList {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    margin: 30px 0px;
-    height: 40px;
-    border-bottom: 1px solid rgb(185, 185, 185);
-  }
-  
-  .task__list {
-    padding-left: 0px;
-  }
-  
-  .task__list--hidden {
-    display: none;
-  }
-  
-  .task__newButtons {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  @media (max-width: 992px) {
-    .task__hideOrShowAllDone {
-        display: flex;
-        flex-basis: 100%;
-        justify-content: center;
-        margin: 5px;
-    };
-  }
-  
-  .task__hideOrShowAllDone {
-    background: transparent;
-    border: none;
-    color: teal;
-    transition: 1s;
-  }
-  
-  .task__hideOrShowAllDone:hover {
-    color: rgb(0, 179, 179)
-  }
-  
-  @media (max-width: 992px) {
-    .task__markAllDone {
-        display: flex;
-        flex-basis: 100%;
-        justify-content: center;
-        margin: 5px;
-    };
-  }
-  
-  .task__markAllDone {
-    background: transparent;
-    border: none;
-    color: teal;
-    transition: 1s;
-  }
-  
-  .task__markAllDone:hover {
-    color: rgb(0, 179, 179)
-  }
-  
-  .task__markAllDone:disabled {
-    color: rgb(202, 202, 202);
-  }
-  
-  .task__content {
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  
-  .task__content--done {
-    text-decoration: line-through
-  }
-  
-  .task__js--done {
-    background-color: rgb(1, 184, 1);
-    border: none;
-    width: 30px;
-    height: 30px;
-    color: white;
-    transition: 1s;
-  }
-  
-  .task__js--done:hover {
-    background-color: rgb(1, 228, 1);
-  }
-  
-  .task__js--remove {
-    background-color: rgb(222, 0, 0);
-    border: none;
-    width: 30px;
-    height: 30px;
-    color: white;
-    transition: 1s;
-  }
-  
-  .task__js--remove:hover {
-    background-color: rgb(255, 22, 22)
-  }
+.list__tasksList {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0;
+  overflow: auto;
+}
+
+.list__listItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 10px;
+  border-bottom: 2px solid #eee;
+  align-items: center;
+}
+
+.list__listItem--hidden {
+  display: none;
+}
+
+.list__listButton {
+  min-width: 30px;
+  min-height: 30px;
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  transition: background 0.3s;
+}
+
+.list__listButton:hover {
+  background-color: hsl(120, 100%, 30%);
+}
+
+.list__listButton:active {
+  border: 1px solid #eee;
+}
+
+.list__taskData {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.list__taskData--done {
+  text-decoration: line-through;
+}
+
+.list__listButton--changedBackground {
+  border: 1px solid red;
+  background-color: red;
+}
+
+.list__listButton--changedBackground:hover {
+  background-color: hsl(0, 100%, 65%);
+}

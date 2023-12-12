@@ -1,17 +1,34 @@
-import React from "react";
+import { useState } from 'react';
 import "./style.css";
 
-const Form = () => (
-    <form className=" form">
+const Form = (props) => {
+    const [newTaskContent, setNewTaskContent] = useState("");
+
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        const trimmedTaskContent = newTaskContent.trim();
+        if (trimmedTaskContent === "") {
+            return null;
+        }
+        props.addNewTask(trimmedTaskContent);
+        setNewTaskContent("");
+    };
+
+    return (
+        <form className="form" onSubmit={onFormSubmit}>
             <input
-              className=" form__newTask"
-              placeholder="add new task"
-              name="To do"
-              type="text"
-              autocomplete="off"
+                className="form__textInput"
+                placeholder="What is there to do?"
+                value={newTaskContent}
+                onChange={(event) => setNewTaskContent(event.target.value)}
             />
-            <button className="form__button">Add new task</button>
-          </form>
-);
+            <button
+                className="form__submitButton"
+            >
+                Add task
+            </button>
+        </form>
+    );
+};
 
 export default Form;

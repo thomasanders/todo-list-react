@@ -1,21 +1,31 @@
-import React from "react";
-import "./style.css"
+import "./style.css";
 
 const Tasks = (props) => (
-  <ul className=" task__list">
-    {props.tasks.map((task) => (
-      <li
-       className={`task__list ${task.done && props.hideDoneTasks ? " task__list--hidden" : ""}`}><button className="task__js--done">
-       {task.done ? "✔" : ""}
-       </button>
-       <span className={`task__content ${task.done ? "task__content--done" : ""}`}>
-       {task.content}
-       </span>
-       <button className="task__js--remove">
-        🗑
-       </button>
-       </li>
-    ))}
-  </ul>
+    <ul className="list__tasksList">
+        {props.tasks.map(task => (
+
+            <li
+                key={task.id}
+                className={`list__listItem ${task.done && props.hideDone ? "list__listItem--hidden" : ""}`}
+            >
+                <button
+                    className="list__listButton"
+                    onClick={() => props.toggleTaskDone(task.id)}
+                >
+                    {task.done ? "✔" : ""}
+                </button>
+                <span className={`list__taskData ${task.done ? " list__taskData--done" : ""}`}>
+                    {task.id} - {task.content}
+                </span>
+                <button
+                    className="list__listButton list__listButton--changedBackground"
+                    onClick={() => props.removeTask(task.id)}
+                >
+                    🗑
+                </button>
+            </li>)
+        )}
+    </ul>
 );
+
 export default Tasks;

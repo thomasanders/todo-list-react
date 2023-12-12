@@ -11,7 +11,7 @@ Application for adding tasks to list.
 - BEM convention
 
 ## Demo
-https://thomasanders.github.io/todo-list-react/
+
 
 
 

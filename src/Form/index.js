@@ -7,7 +7,7 @@ const Form = (props) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         const trimmedTaskContent = newTaskContent.trim();
-        if (trimmedTaskContent === "") {
+        if (!trimmedTaskContent) {
             return null;
         }
         props.addNewTask(trimmedTaskContent);

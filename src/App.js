@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -7,9 +7,10 @@ import Header from "./Header";
 import Container from "./Container";
 
 // const tasks = [
-//   {id:1, content:"Download -To do App-", done: true},
-//   {id:2, content:"Learn React", done: false},
+//   { id: 1, content: "Przejść na Reakta", done: false },
+//   { id: 2, content: " Zjeść kolacje", done: true },
 // ];
+
 // const hideDoneTasks = false;
 
 function App() {
@@ -20,33 +21,35 @@ function App() {
   );
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
   const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
+    setHideDone((hideDone) => !hideDone);
   };
 
   const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
   };
 
   const toggleTaskDone = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done, };
-      }
+    setTasks((tasks) =>
+      tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, done: !task.done };
+        }
 
-      return task;
-    }));
+        return task;
+      })
+    );
   };
 
   const toggleAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({ ...task, done: true })));
+    setTasks((tasks) => tasks.map((task) => ({ ...task, done: true })));
   };
 
   const addNewTask = (content) => {
-    setTasks(tasks => [
+    setTasks((tasks) => [
       ...tasks,
       {
         id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
@@ -60,10 +63,7 @@ function App() {
     <Container>
       <Header title="Tasks list" />
 
-      <Section
-        title="Add new task"
-        body={<Form addNewTask={addNewTask} />}
-      />
+      <Section title="Add new task" body={<Form addNewTask={addNewTask} />} />
 
       <Section
         title="Tasks list"
@@ -74,7 +74,8 @@ function App() {
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             toggleAllDone={toggleAllDone}
-          />}
+          />
+        }
         body={
           <Tasks
             tasks={tasks}
@@ -82,7 +83,8 @@ function App() {
             hideDone={hideDone}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
-          />}
+          />
+        }
       />
     </Container>
   );

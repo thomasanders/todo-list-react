@@ -20,7 +20,7 @@ const Form = (props) => {
                 className="form__textInput"
                 placeholder="What is there to do?"
                 value={newTaskContent}
-                onChange={(event) => setNewTaskContent(event.target.value)}
+                onChange={({target}) => setNewTaskContent(target.value)}
             />
             <button
                 className="form__submitButton"

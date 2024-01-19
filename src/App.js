@@ -6,23 +6,16 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 
-// const tasks = [
-//   { id: 1, content: "Przejść na Reakta", done: false },
-//   { id: 2, content: " Zjeść kolacje", done: true },
-// ];
-
-// const hideDoneTasks = false;
-
 function App() {
   const [hideDone, setHideDone] = useState(false);
-
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);

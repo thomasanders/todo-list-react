@@ -1,32 +1,35 @@
-import { useState } from "react";
-import "./style.css";
+import React, { useState, useRef } from "react";
+import { StyledForm, Button, Input } from "./styled";
 
-const Form = (props) => {
-  const [newTaskContent, setNewTaskContent] = useState("");
+const Form = ({ addNewTask }) => {
+    const [newTaskContent, setNewTaskContent] = useState("");
+    const inputRef = useRef(null);
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    const trimmedTaskContent = newTaskContent.trim();
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-    if (!trimmedTaskContent) {
-      return null;
-    }
-    
-    props.addNewTask(trimmedTaskContent);
-    setNewTaskContent("");
-  };
+        const trimmedNewTaskContent = newTaskContent.trim();
 
-  return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <input
-        className="form__textInput"
-        placeholder="What is there to do?"
-        value={newTaskContent}
-        onChange={({ target }) => setNewTaskContent(target.value)}
-      />
-      <button className="form__submitButton">Add task</button>
-    </form>
-  );
+        if (!trimmedNewTaskContent) {
+            return;
+        }
+
+        addNewTask(trimmedNewTaskContent);
+        setNewTaskContent("");
+        inputRef.current.focus();
+    };
+
+    return (
+        <StyledForm onSubmit={onFormSubmit}>
+            <Input
+                ref={inputRef}
+                value={newTaskContent}
+                placeholder="Add Task"
+                onChange={({ target }) => setNewTaskContent(target.value)}
+            />
+            <Button>Add new Task</Button>
+        </StyledForm>
+    );
 };
 
 export default Form;

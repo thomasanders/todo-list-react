@@ -1,7 +1,9 @@
-const Container = (props) => (
-    <main className="container">
-        {props.children}
-    </main>
+import { StyledContainer } from "./styled";
+
+const Container = ({ children }) => (
+    <StyledContainer>
+        {children}
+    </StyledContainer>
 );
 
 export default Container;

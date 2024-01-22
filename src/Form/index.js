@@ -1,34 +1,32 @@
-import { useState } from 'react';
+import { useState } from "react";
 import "./style.css";
 
 const Form = (props) => {
-    const [newTaskContent, setNewTaskContent] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState("");
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        const trimmedTaskContent = newTaskContent.trim();
-        if (!trimmedTaskContent) {
-            return null;
-        }
-        props.addNewTask(trimmedTaskContent);
-        setNewTaskContent("");
-    };
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    const trimmedTaskContent = newTaskContent.trim();
 
-    return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <input
-                className="form__textInput"
-                placeholder="What is there to do?"
-                value={newTaskContent}
-                onChange={({target}) => setNewTaskContent(target.value)}
-            />
-            <button
-                className="form__submitButton"
-            >
-                Add task
-            </button>
-        </form>
-    );
+    if (!trimmedTaskContent) {
+      return null;
+    }
+    
+    props.addNewTask(trimmedTaskContent);
+    setNewTaskContent("");
+  };
+
+  return (
+    <form className="form" onSubmit={onFormSubmit}>
+      <input
+        className="form__textInput"
+        placeholder="What is there to do?"
+        value={newTaskContent}
+        onChange={({ target }) => setNewTaskContent(target.value)}
+      />
+      <button className="form__submitButton">Add task</button>
+    </form>
+  );
 };
 
 export default Form;

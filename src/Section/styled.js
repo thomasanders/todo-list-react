@@ -13,7 +13,7 @@ export const Header = styled.header`
     grid-template-columns: auto auto;
     justify-content: space-between;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
         display: flex;
         justify-content: center;
     }

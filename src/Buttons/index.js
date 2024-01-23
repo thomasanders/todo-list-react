@@ -9,7 +9,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
             <StyledButtons
                 onClick={setAllDone}
                 disabled={tasks.every(({ done }) => done)}>
-                Finish all tasks
+                Mark all tasks Done
             </StyledButtons>
         </Button>
     )

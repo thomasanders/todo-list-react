@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const TasksList = styled.ul`
+export const List = styled.ul`
     padding: 30px 10px;
     margin: auto;
     list-style: none;

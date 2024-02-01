@@ -7,8 +7,9 @@ export const StyledSection = styled.section`
 
 export const Header = styled.header`
     align-self: flex-start;
-    padding: 20px;
+    padding: 5px;
     margin: 0;
+    /* border-bottom: 1px solid #eee; */
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;

@@ -12,7 +12,7 @@ export const Item = styled.li`
     grid-template-columns: auto 1fr auto;
     gap: 10px;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
 
     ${({ hidden }) => hidden && css`
         display: none;

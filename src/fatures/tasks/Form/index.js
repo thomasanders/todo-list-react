@@ -1,35 +1,47 @@
 import React, { useState, useRef } from "react";
 import { StyledForm, Button, Input } from "./styled";
+import { nanoid } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import { addTask } from "../tasksSlice";
 
-const Form = ({ addNewTask }) => {
-    const [newTaskContent, setNewTaskContent] = useState("");
-    const inputRef = useRef(null);
+const Form = () => {
+  const [newTaskContent, setNewTaskContent] = useState("");
+  const inputRef = useRef(null);
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
+  const dispatch = useDispatch();
 
-        const trimmedNewTaskContent = newTaskContent.trim();
+  const onFormSubmit = (event) => {
+    event.preventDefault();
 
-        if (!trimmedNewTaskContent) {
-            return;
-        }
+    const trimmedNewTaskContent = newTaskContent.trim();
 
-        addNewTask(trimmedNewTaskContent);
-        setNewTaskContent("");
-        inputRef.current.focus();
-    };
+    if (!trimmedNewTaskContent) {
+      return;
+    }
 
-    return (
-        <StyledForm onSubmit={onFormSubmit}>
-            <Input
-                ref={inputRef}
-                value={newTaskContent}
-                placeholder="Add Task"
-                onChange={({ target }) => setNewTaskContent(target.value)}
-            />
-            <Button>Add new Task</Button>
-        </StyledForm>
+    dispatch(
+      addTask({
+        content: trimmedNewTaskContent,
+        done: false,
+        id: nanoid(),
+      })
     );
+
+    setNewTaskContent("");
+    inputRef.current.focus();
+  };
+
+  return (
+    <StyledForm onSubmit={onFormSubmit}>
+      <Input
+        ref={inputRef}
+        value={newTaskContent}
+        placeholder="Add Task"
+        onChange={({ target }) => setNewTaskContent(target.value)}
+      />
+      <Button>Add new Task</Button>
+    </StyledForm>
+  );
 };
 
 export default Form;

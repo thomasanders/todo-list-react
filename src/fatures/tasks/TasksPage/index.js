@@ -1,12 +1,16 @@
 import React from "react";
-import Form from "../TasksPage/Form";
-import List from "../TasksPage/TaskList";
-import Buttons from "../TasksPage/Buttons";
+import Form from "./Form";
+import TaskList from "../TasksPage/TaskList";
+import Buttons from "../TasksPage/Buttons"
 import Container from "../../../common/Container";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 
+
+
 function TasksPage() {
+
+  
   return (
     <Container>
       <Header title="Tasks list" />
@@ -14,7 +18,7 @@ function TasksPage() {
 
       <Section
         title="Task list"
-        body={<List />}
+        body={<TaskList />}
         extraHeaderContent={<Buttons />}
       />
     </Container>

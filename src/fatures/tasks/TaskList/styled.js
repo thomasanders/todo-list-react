@@ -25,7 +25,7 @@ export const Content = styled.span`
     `}
 `;
 
-export const Buttons = styled.button`
+export const StyledButton = styled.button`
     color: white;
     width: 30px;
     height: 30px;
@@ -34,9 +34,8 @@ export const Buttons = styled.button`
     transition: 0.5s;
     background-color: teal;
     cursor: pointer;
-    &:hoover {
-        background-color: white;
-    }
+    
+    
 ;
 
     /* ${({ done }) => done && css`

@@ -6,9 +6,14 @@ const tasksSlice = createSlice({
     tasks: [
       {
         id: 1,
-        content: "test1",
+        content: "Download React",
         done: true,
       },
+      {
+        id:2,
+        content: "Learn Redux",
+        done: false,
+      }
     ],
     hideDone: false,
   },

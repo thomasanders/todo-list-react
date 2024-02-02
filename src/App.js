@@ -1,8 +1,9 @@
 import React from "react";
-import { HashRouter, NavLink, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import TaskPage from "./fatures/tasks/TaskPage";
 import AuthorPage from "./fatures/author/AuthorPage";
 import TasksPage from "./fatures/tasks/TasksPage";
+import { StyledNavLink } from "./styled";
 
 // eslint-disable-next-line
 export default () => (
@@ -10,14 +11,14 @@ export default () => (
     <nav>
       <ul>
         <li>
-          <NavLink activeClassName="active" to="/tasks">
+          <StyledNavLink to="/tasks">
             Tasks
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/author">
+          <StyledNavLink  to="/author">
             About me
-          </NavLink>
+          </StyledNavLink>
         </li>
       </ul>
       <Switch>

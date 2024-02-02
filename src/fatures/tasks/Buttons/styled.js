@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     color: ${({ theme }) => theme.colors.teal};
@@ -10,7 +10,7 @@ export const Button = styled.div`
     padding: 20px;
 `;
 
-export const StyledButtons = styled.button`
+export const Button = styled.button`
     background: transparent;
     border: none;
     color: teal;

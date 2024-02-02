@@ -25,22 +25,28 @@ export const Content = styled.span`
     `}
 `;
 
-export const Button = styled.button`
+export const Buttons = styled.button`
     color: white;
     width: 30px;
     height: 30px;
     padding: 0;
     border: none;
     transition: 0.5s;
+    background-color: teal;
+    cursor: pointer;
+    &:hoover {
+        background-color: white;
+    }
+;
 
-    ${({ Done }) => Done && css`
+    /* ${({ done }) => done && css`
         background-color: green;
 
         &:hover {
             background-color: rgb(55, 161, 23);
             cursor: pointer;
         }
-    `}
+    `} */
 
     ${({ remove }) => remove && css`
         background-color: red;

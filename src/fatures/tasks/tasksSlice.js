@@ -1,20 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getTasksFormLocaleStorage } from "./tasksLacalStorage";
 
 const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
-    tasks: [
-      // {
-      //   id: 1,
-      //   content: "Download React",
-      //   done: true,
-      // },
-      // {
-      //   id:2,
-      //   content: "Learn Redux",
-      //   done: false,
-      // }
-    ],
+    tasks: getTasksFormLocaleStorage(),
     hideDone: false,
   },
   reducers: {

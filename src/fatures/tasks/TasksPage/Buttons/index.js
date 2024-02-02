@@ -1,7 +1,7 @@
 import {
   toggleHideDone, setAllDone, selectAreTasksEmpty, 
   selectHideDone, selectIsEveryTaskDone, fetchExampleTasks
-} from "../tasksSlice";
+} from "../../tasksSlice";
 import { Wrapper, Button } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 

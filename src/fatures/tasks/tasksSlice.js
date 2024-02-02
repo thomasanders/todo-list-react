@@ -4,16 +4,16 @@ const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
     tasks: [
-      {
-        id: 1,
-        content: "Download React",
-        done: true,
-      },
-      {
-        id:2,
-        content: "Learn Redux",
-        done: false,
-      }
+      // {
+      //   id: 1,
+      //   content: "Download React",
+      //   done: true,
+      // },
+      // {
+      //   id:2,
+      //   content: "Learn Redux",
+      //   done: false,
+      // }
     ],
     hideDone: false,
   },
@@ -38,23 +38,30 @@ const tasksSlice = createSlice({
         task.done = true;
       }
     },
+
+    fetchExampleTasks: () => {},
+    setTasks : (state, { payload: tasks} ) =>{
+      state.tasks = tasks;
+    }
   },
 });
 
 export const {
   addTask,
+  setTasks,
   toggleHideDone,
   toggleTaskDone,
   removeTask,
   setAllDone,
+  fetchExampleTasks,
 } = tasksSlice.actions;
 
-const selectTasksState = state => state.tasks;
+const selectTasksState = (state) => state.tasks;
 
-export const selectTasks = state => selectTasksState(state).tasks;
-export const selectHideDone = state => selectTasksState(state).hideDone;
-export const selectAreTasksEmpty = state => selectTasks(state).lenght === 0;
-export const selectIsEveryTaskDone = state =>
-  selectTasks(state).every(({ done })=> done);
+export const selectTasks = (state) => selectTasksState(state).tasks;
+export const selectHideDone = (state) => selectTasksState(state).hideDone;
+export const selectAreTasksEmpty = (state) => selectTasks(state).lenght === 0;
+export const selectIsEveryTaskDone = (state) =>
+  selectTasks(state).every(({ done }) => done);
 
 export default tasksSlice.reducer;

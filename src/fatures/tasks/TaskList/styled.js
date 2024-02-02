@@ -32,20 +32,20 @@ export const StyledButton = styled.button`
     padding: 0;
     border: none;
     transition: 0.5s;
-    background-color: teal;
-    cursor: pointer;
+    /* background-color: teal;
+    cursor: pointer; */
     
     
 ;
 
-    /* ${({ done }) => done && css`
+    ${({ Done }) => Done && css`
         background-color: green;
 
         &:hover {
             background-color: rgb(55, 161, 23);
             cursor: pointer;
         }
-    `} */
+    `}
 
     ${({ remove }) => remove && css`
         background-color: red;

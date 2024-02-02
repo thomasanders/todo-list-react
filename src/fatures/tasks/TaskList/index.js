@@ -12,7 +12,7 @@ const TasksList = () => {
     <List>
       {tasks.map(task => (
         <Item 
-        key={task.id}
+        key={task.id} 
         hidden={task.done && hideDone}>
           <StyledButton
           toggleDone onClick={() => dispatch(toggleTaskDone(task.id))}>

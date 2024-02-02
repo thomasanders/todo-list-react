@@ -35,18 +35,16 @@ export const StyledButton = styled.button`
   height: 30px;
   padding: 0;
   border: none;
-  background-color: teal;
   transition: 0.5s;
-  cursor: pointer;
 
 
-  ${({ done }) =>
-    done &&
+  ${({ toggleDone }) =>
+    toggleDone &&
     css`
       background-color: teal;
 
       &:hover {
-        background-color: rgb(55, 161, 23);
+        background-color: rgb(34, 166, 166);
         cursor: pointer;
       }
     `}

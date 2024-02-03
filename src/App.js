@@ -4,8 +4,12 @@ import TaskPage from "./fatures/tasks/TaskPage";
 import AuthorPage from "./fatures/author/AuthorPage";
 import TasksPage from "./fatures/tasks/TasksPage";
 import { StyledNavLink } from "./styled";
+import { toTask, toTasks, toAuthor } from "./routes";
 
 // eslint-disable-next-line
+
+
+
 export default () => (
   <HashRouter>
     <nav>

@@ -1,21 +1,20 @@
-import { Link, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { List, Item, Content, Button, StyledLink } from "./styled";
 import {
-  
-  selectTaskByQuery,
+  selectTasksByQuery,
   toggleTaskDone,
   removeTask,
   selectHideDone,
 } from "../../tasksSlice";
-import { List, Item, Content, StyledButton } from "./styled";
-import { useSelector, useDispatch } from "react-redux";
-import searchQueryParamname from "../../TaskPage/searchQueryParamname";
+import { toTask } from "../../../../routes";
+import searchQueryParamName from "../searchQueryParamName";
+import { useQueryParameter} from "../queryParameters"
 
 const TasksList = () => {
-  const location = useLocation();
- 
-  const query= (new URLSearchParams(location.search)).get(searchQueryParamname);
+  const query = useQueryParameter(searchQueryParamName);
 
-  const tasks = useSelector(state => selectTaskByQuery(state, query));
+  const tasks = useSelector((state) => selectTasksByQuery(state, query));
   const hideDone = useSelector(selectHideDone);
 
   const dispatch = useDispatch();
@@ -23,18 +22,18 @@ const TasksList = () => {
     <List>
       {tasks.map((task) => (
         <Item key={task.id} hidden={task.done && hideDone}>
-          <StyledButton
-            toggleDone
-            onClick={() => dispatch(toggleTaskDone(task.id))}
-          >
+          <Button toggleDone onClick={() => dispatch(toggleTaskDone(task.id))}>
             {task.done ? "✔" : ""}
-          </StyledButton>
+          </Button>
           <Content done={task.done}>
-            <Link to={`/tasks/${task.id}`}> {task.content}</Link>
+            <StyledLink to={toTask({ id: task.id })}>
+              {" "}
+              {task.content}
+            </StyledLink>
           </Content>
-          <StyledButton remove onClick={() => dispatch(removeTask(task.id))}>
+          <Button remove onClick={() => dispatch(removeTask(task.id))}>
             🗑
-          </StyledButton>
+          </Button>
         </Item>
       ))}
     </List>

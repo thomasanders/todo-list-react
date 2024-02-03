@@ -29,7 +29,7 @@ export const Content = styled.span`
     `}
 `;
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
   color: white;
   width: 30px;
   height: 30px;

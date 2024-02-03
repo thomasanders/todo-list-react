@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../Input";
-import { useQueryParameter, useReplaceQueryParameter } from "../queryParameters";
+import { useQueryParameter, useReplaceQueryParameter } from "../../queryParameters";
 import { Wrapper } from "./styled";
 import searchQueryParamName from "./searchQueryParamName";
 

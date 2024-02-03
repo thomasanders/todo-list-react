@@ -9,7 +9,7 @@ import {
 } from "../../tasksSlice";
 import { toTask } from "../../../../routes";
 import searchQueryParamName from "../Search/searchQueryParamName";
-import { useQueryParameter } from "../queryParameters";
+import { useQueryParameter } from "../../queryParameters";
 
 const TaskList = () => {
   const query = useQueryParameter(searchQueryParamName);

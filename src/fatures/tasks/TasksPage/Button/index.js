@@ -8,7 +8,7 @@ border: none;
 margin: 0 0 0 20px;
 transition: filter 0.3;
 
-@media(max-width:766px) {
+@media(max-width:767px) {
     flex-basis: 100%;
     margin: 10px;
 }

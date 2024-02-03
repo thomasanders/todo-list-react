@@ -1,7 +1,8 @@
 import React from "react";
 import { toAuthor, toTasks } from "../routes";
-import{ List , Item , StyledNavLink} from ".styled";
+import{ List , Item , StyledNavLink} from "./styled";
 
+// eslint-disable-next-line
 export default () => {
     return (
         <nav>

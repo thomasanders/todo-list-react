@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-const  activeClassName = "link-active";
+const activeClassName = "link-active";
 
-export const StyledNavLink = styled(NavLink).attrs(()=>({
+export const StyledNavLink = styled(NavLink).attrs(() => ({
     activeClassName,
 }))`
-color:${({ theme}) => theme.color.white};
+color: white;
 text-decoration: none;
 
 &.${activeClassName} {
@@ -14,19 +14,19 @@ text-decoration: none;
 }
 
 &:hover {
-    border-bottom: 1px solid;
+border-bottom: 1px solid;
 }
 `;
 
 export const List = styled.ul`
-background: ${({theme}) => theme.color.teal};
-margin: 0;
-padding: 0;
-display: flex;
-list-style: none;
-
+    background: teal;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
 `;
 
 export const Item = styled.li`
-margin:20px;
-`;
+    margin: 20px;
+`

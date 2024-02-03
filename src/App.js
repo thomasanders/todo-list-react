@@ -1,32 +1,28 @@
-import React from "react";
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import TasksPage from "./fatures/tasks/TasksPage/index";
 import TaskPage from "./fatures/tasks/TaskPage";
-import Author from "./fatures/author/Author";
-import TasksPage from "./fatures/tasks/TasksPage";
-import { StyledNavLink } from "./styled";
-import { toTask, toTasks, toAuthor } from "./routes";
+import AuthorPage from "./fatures/author/AuthorPage";
+import Navigation from "./Navigation";
+import { toAuthor, toTask, toTasks } from "./routes";
 
-// eslint-disable-next-line
-
-export default () => (
-  <HashRouter>
-    <Navigation />
-
-    <Switch>
-      <Route path={toTask()}>
-        <Task />
-      </Route>
-      <Route path={toTasks()}>
-        <Tasks />
-      </Route>
-      <Route path={toAuthor()}>
-        <Author />
-      </Route>
-
-      <Route to={toTask()}></Route>
-      <Route>
-        <Redirect to={toTasks()} />
-      </Route>
-    </Switch>
-  </HashRouter>
+const App = () => (
+    <HashRouter>
+        <Navigation />
+        <Switch>
+            <Route path={toTask()}>
+                <TaskPage />
+            </Route>
+            <Route path={toTasks()}>
+                <TasksPage />
+            </Route>
+            <Route path={toAuthor()}>
+                <AuthorPage />
+            </Route>
+            <Route>
+                <Redirect to={toTasks()} />
+            </Route>
+        </Switch>
+    </HashRouter>
 );
+
+export default App;

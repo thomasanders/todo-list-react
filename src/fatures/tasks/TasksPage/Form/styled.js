@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
     grid-template-columns: 1fr auto;
     grid-gap: 10px;
     
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    @media (max-width: 767px) {
         display: flex;
         flex-direction: column;
     };

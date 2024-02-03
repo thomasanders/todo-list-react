@@ -60,3 +60,6 @@ export const Button = styled.button`
       }
     `}
 `;
+export const StyledLink = styled.link`
+  text-decoration: none;
+`;

@@ -1,5 +1,5 @@
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom/cjs/react-router-dom.min";
-import TasksPage from "./fatures/tasks/TasksPage/index";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import TasksPage from "./fatures/tasks/TasksPage";
 import TaskPage from "./fatures/tasks/TaskPage";
 import AuthorPage from "./fatures/author/AuthorPage";
 import Navigation from "./Navigation";

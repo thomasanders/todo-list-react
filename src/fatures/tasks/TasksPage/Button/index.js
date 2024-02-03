@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default styled.button`
 background: transparent;
 color: teal;
-border: findNonSerializableValue;
+border: none;
 margin: 0 0 0 20px;
 transition: filter 0.3;
 

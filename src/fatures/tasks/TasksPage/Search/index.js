@@ -10,22 +10,23 @@ import searchQueryParamName from "../TaskList/searchQueryParamName";
 // eslint-disable-next-line
 export default () => {
   const query = useQueryParameter(searchQueryParamName);
-  const replaceQueryParameter = useReplaceQueryParameter;
+  const replaceQueryParameter = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
-    replaceQueryParameter({
+    replaceQueryParameter
+    ({
       key: searchQueryParamName,
       value: target.value.trim() !== "" ? target.value : undefined,
     });
   };
 
   return (
-    <Wrapper>
-      <Input
+<Wrapper>
+<Input
         placeholder="Search tasks"
         value={query || " "}
         onChange={onInputChange}
       />
-    </Wrapper>
+</Wrapper>
   )
 };

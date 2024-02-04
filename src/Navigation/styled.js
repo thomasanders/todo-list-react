@@ -4,29 +4,29 @@ import { NavLink } from "react-router-dom";
 const activeClassName = "link-active";
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
+    activeClassName,
 }))`
-  color: white;
-  text-decoration: none;
+color: white;
+text-decoration: none;
 
-  &.${activeClassName} {
+&.${activeClassName} {
     font-weight: bold;
-  }
+}
 
-  &:hover {
-    border-bottom: 1px solid;
-  }
+&:hover {
+border-bottom: 1px solid;
+}
 `;
 
 export const List = styled.ul`
-  background: teal;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  list-style: none;
+    background: teal;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
 `;
 
 export const Item = styled.li`
-  margin: 20px;
-`;
+    margin: 20px;
+`

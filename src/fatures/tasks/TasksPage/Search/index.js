@@ -5,7 +5,7 @@ import {
   useReplaceQueryParameter,
 } from "../../queryParameters";
 import { Wrapper } from "./styled";
-import searchQueryParamName from "./searchQueryParamName";
+import searchQueryParamName from "../TaskList/searchQueryParamName";
 
 // eslint-disable-next-line
 export default () => {

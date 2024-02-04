@@ -8,7 +8,7 @@ import {
   selectHideDone,
 } from "../../tasksSlice";
 import { toTask } from "../../../../routes";
-import searchQueryParamName from "../Search/searchQueryParamName";
+import searchQueryParamName from "./searchQueryParamName";
 import { useQueryParameter } from "../../queryParameters";
 
 const TaskList = () => {

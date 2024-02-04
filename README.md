@@ -9,6 +9,9 @@ Application for adding tasks to list.
 - CSS
 - Javascript
 - BEM convention
+- Redux
+- Redux-Saga
+- Styled-Components
 
 ## Demo
 https://thomasanders.github.io/todo-list-react/
